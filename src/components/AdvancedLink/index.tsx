@@ -8,15 +8,19 @@ const AdvancedLink: React.FC<AdvancedLinkProp> = ({
   isOpenNewWindow,
   children,
   className,
-  style
+  style,
+  replace,
+  innerRef,
+  title,
+  target
 }) => (
   <>
     {
       linkType !== 'outer' ?
-        <Link to={href} className={className || ''} style={style || {}}>
+        <Link title={title} to={href} className={className || ''} style={style || {}} replace={replace} innerRef={innerRef} target={isOpenNewWindow ? '_blank' : target}>
           {children}
         </Link> :
-        <a className={className || ''} style={style || {}} href={href} target={isOpenNewWindow ? '_blank' : ''}>
+        <a className={className || ''} style={style || {}} href={href} target={isOpenNewWindow ? '_blank' : target} rel="noopener norefferrer">
           {children}
         </a>
     }
