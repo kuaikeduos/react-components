@@ -17,10 +17,24 @@ const AdvancedLink: React.FC<AdvancedLinkProp> = ({
   <>
     {
       linkType !== 'outer' ?
-        <Link title={title} to={href} className={className || ''} style={style || {}} replace={replace} innerRef={innerRef} target={isOpenNewWindow ? '_blank' : target}>
+        <Link 
+          title={title}
+          to={href}
+          className={className || ''}
+          style={style || {}}
+          replace={replace}
+          innerRef={innerRef}
+          target={isOpenNewWindow ? '_blank' : target}
+        >
           {children}
         </Link> :
-        <a className={className || ''} style={style || {}} href={href} target={isOpenNewWindow ? '_blank' : target} rel="noopener norefferrer">
+        <a
+          className={className || ''}
+          style={style || {}}
+          href={href}
+          target={isOpenNewWindow ? '_blank' : target}
+          rel="noopener norefferrer"
+        >
           {children}
         </a>
     }
